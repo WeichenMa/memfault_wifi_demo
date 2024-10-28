@@ -7,7 +7,7 @@
 cmake_minimum_required(VERSION 3.20.0)
 
 find_package(Zephyr REQUIRED HINTS $ENV{ZEPHYR_BASE})
-project(integration_sandbox_0)
+project(memfault_sample)
 
 # NORDIC SDK APP START
 add_subdirectory(src)

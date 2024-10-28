@@ -24,8 +24,6 @@ LOG_MODULE_REGISTER(memfault_sample, CONFIG_MEMFAULT_SAMPLE_LOG_LEVEL);
 #define CONN_LAYER_EVENT_MASK (NET_EVENT_CONN_IF_FATAL_ERROR)
 
 static K_SEM_DEFINE(nw_connected_sem, 0, 1);
-void my_main_task(void);
-static K_THREAD_DEFINE(main_task_tid, 1024, my_main_task, NULL, NULL, NULL, K_LOWEST_APPLICATION_THREAD_PRIO, 0, 0);
 
 /* Zephyr NET management event callback structures. */
 static struct net_mgmt_event_callback l4_cb;
@@ -140,13 +138,6 @@ static void connectivity_event_handler(struct net_mgmt_event_callback *cb, uint3
 	}
 }
 
-void my_main_task(void) {
-   while (1) {
-    //   your_rtos_wait_for_event();
-      MEMFAULT_METRIC_ADD(MainTaskWakeups, 1);
-   }
-}
-
 int main(void)
 {
 	int err;
@@ -190,8 +181,6 @@ int main(void)
 	 * We post data here so as soon as a connection is available
 	 * the latest data will be pushed to Memfault.
 	 */
-
-	k_thread_start(main_task_tid);
 
 	while (1) {
 		k_sem_take(&nw_connected_sem, K_FOREVER);

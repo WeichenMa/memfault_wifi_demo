@@ -3,6 +3,5 @@
  */
 
 MEMFAULT_METRICS_KEY_DEFINE(switch_1_toggle_count, kMemfaultMetricType_Unsigned)
-
 //! @file memfault_metrics_heartbeat_config.def
 MEMFAULT_METRICS_KEY_DEFINE(MainTaskWakeups, kMemfaultMetricType_Unsigned)
