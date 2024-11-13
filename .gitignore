@@ -5,5 +5,12 @@
 # build
 /build*/
 
-# Wifi credentials
-wifi-credentials.conf
+# Remove west environment directories for version controll
+/bootloader/
+/test/
+/.west/
+/tools/
+/modules/
+/nrfxlib/
+/nrf/
+/zephyr/
