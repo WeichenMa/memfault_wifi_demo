@@ -10,13 +10,13 @@
             - name: sdk-nrf
               remote: nrf-connect-sdk
               path: nrf
-              revision: v2.6.2
+              revision: v2.7.0
               import: true
 
             # Explicitly add the Memfault SDK, to override the version in the sdk-nrf manifest
             - name: memfault-firmware-sdk
               path: modules/lib/memfault-firmware-sdk
-              revision: 1.15.0
+              revision: 1.16.0
               remote: memfault
           self:
             path: my_example_application
