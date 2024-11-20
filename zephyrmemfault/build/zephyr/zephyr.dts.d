@@ -1,0 +1,29 @@
+empty_file.o: \
+ D:/ESE5180codeFolder/fp-f24-iot-venture-pitch-easypark/memfault_wifi_demo/zephyrmemfault/zephyr/misc/empty_file.c \
+ D:/ESE5180codeFolder/fp-f24-iot-venture-pitch-easypark/memfault_wifi_demo/zephyrmemfault/nrf/boards/arm/nrf7002dk_nrf5340/nrf7002dk_nrf5340_cpuapp.dts \
+ D:/ESE5180codeFolder/fp-f24-iot-venture-pitch-easypark/memfault_wifi_demo/zephyrmemfault/zephyr/dts/arm/nordic/nrf5340_cpuapp_qkaa.dtsi \
+ D:/ESE5180codeFolder/fp-f24-iot-venture-pitch-easypark/memfault_wifi_demo/zephyrmemfault/zephyr/dts/common/mem.h \
+ D:/ESE5180codeFolder/fp-f24-iot-venture-pitch-easypark/memfault_wifi_demo/zephyrmemfault/zephyr/dts/arm/nordic/nrf5340_cpuapp.dtsi \
+ D:/ESE5180codeFolder/fp-f24-iot-venture-pitch-easypark/memfault_wifi_demo/zephyrmemfault/zephyr/dts/arm/armv8-m.dtsi \
+ D:/ESE5180codeFolder/fp-f24-iot-venture-pitch-easypark/memfault_wifi_demo/zephyrmemfault/zephyr/dts/common/skeleton.dtsi \
+ D:/ESE5180codeFolder/fp-f24-iot-venture-pitch-easypark/memfault_wifi_demo/zephyrmemfault/zephyr/dts/arm/nordic/nrf_common.dtsi \
+ D:/ESE5180codeFolder/fp-f24-iot-venture-pitch-easypark/memfault_wifi_demo/zephyrmemfault/zephyr/include/zephyr/dt-bindings/adc/adc.h \
+ D:/ESE5180codeFolder/fp-f24-iot-venture-pitch-easypark/memfault_wifi_demo/zephyrmemfault/zephyr/include/zephyr/dt-bindings/adc/nrf-adc.h \
+ D:/ESE5180codeFolder/fp-f24-iot-venture-pitch-easypark/memfault_wifi_demo/zephyrmemfault/zephyr/include/zephyr/dt-bindings/dt-util.h \
+ D:/ESE5180codeFolder/fp-f24-iot-venture-pitch-easypark/memfault_wifi_demo/zephyrmemfault/zephyr/include/zephyr/sys/util_macro.h \
+ D:/ESE5180codeFolder/fp-f24-iot-venture-pitch-easypark/memfault_wifi_demo/zephyrmemfault/zephyr/include/zephyr/sys/util_internal.h \
+ D:/ESE5180codeFolder/fp-f24-iot-venture-pitch-easypark/memfault_wifi_demo/zephyrmemfault/zephyr/include/zephyr/sys/util_loops.h \
+ D:/ESE5180codeFolder/fp-f24-iot-venture-pitch-easypark/memfault_wifi_demo/zephyrmemfault/zephyr/include/zephyr/dt-bindings/gpio/gpio.h \
+ D:/ESE5180codeFolder/fp-f24-iot-venture-pitch-easypark/memfault_wifi_demo/zephyrmemfault/zephyr/include/zephyr/dt-bindings/i2c/i2c.h \
+ D:/ESE5180codeFolder/fp-f24-iot-venture-pitch-easypark/memfault_wifi_demo/zephyrmemfault/zephyr/include/zephyr/dt-bindings/pinctrl/nrf-pinctrl.h \
+ D:/ESE5180codeFolder/fp-f24-iot-venture-pitch-easypark/memfault_wifi_demo/zephyrmemfault/zephyr/include/zephyr/dt-bindings/pwm/pwm.h \
+ D:/ESE5180codeFolder/fp-f24-iot-venture-pitch-easypark/memfault_wifi_demo/zephyrmemfault/zephyr/dts/common/freq.h \
+ D:/ESE5180codeFolder/fp-f24-iot-venture-pitch-easypark/memfault_wifi_demo/zephyrmemfault/zephyr/dts/arm/nordic/override.dtsi \
+ D:/ESE5180codeFolder/fp-f24-iot-venture-pitch-easypark/memfault_wifi_demo/zephyrmemfault/zephyr/dts/arm/nordic/nrf5340_cpuapp_peripherals.dtsi \
+ D:/ESE5180codeFolder/fp-f24-iot-venture-pitch-easypark/memfault_wifi_demo/zephyrmemfault/zephyr/dts/arm/nordic/nrf5340_cpuapp_ipc.dtsi \
+ D:/ESE5180codeFolder/fp-f24-iot-venture-pitch-easypark/memfault_wifi_demo/zephyrmemfault/zephyr/dts/arm/nordic/nrf5340_cpuapp_peripherals_ns.dtsi \
+ D:/ESE5180codeFolder/fp-f24-iot-venture-pitch-easypark/memfault_wifi_demo/zephyrmemfault/nrf/boards/arm/nrf7002dk_nrf5340/nrf5340_cpuapp_common.dts \
+ D:/ESE5180codeFolder/fp-f24-iot-venture-pitch-easypark/memfault_wifi_demo/zephyrmemfault/nrf/boards/arm/nrf7002dk_nrf5340/nrf5340_cpuapp_common-pinctrl.dtsi \
+ D:/ESE5180codeFolder/fp-f24-iot-venture-pitch-easypark/memfault_wifi_demo/zephyrmemfault/nrf/boards/arm/nrf7002dk_nrf5340/nrf5340_cpuapp_partition_conf.dts \
+ D:/ESE5180codeFolder/fp-f24-iot-venture-pitch-easypark/memfault_wifi_demo/zephyrmemfault/nrf/boards/arm/nrf7002dk_nrf5340/nrf5340_shared_sram_planning_conf.dts \
+ D:/ESE5180codeFolder/fp-f24-iot-venture-pitch-easypark/memfault_wifi_demo/zephyrmemfault/nrf/boards/arm/nrf7002dk_nrf5340/nrf7002dk_nrf5340_cpuapp-pinctrl.dtsi

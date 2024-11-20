@@ -25,6 +25,9 @@ LOG_MODULE_REGISTER(memfault_sample, CONFIG_MEMFAULT_SAMPLE_LOG_LEVEL);
 
 static K_SEM_DEFINE(nw_connected_sem, 0, 1);
 
+// Callback for IP related events
+static struct net_mgmt_event_callback net_mgmt_ipv4_callback;
+
 /* Zephyr NET management event callback structures. */
 static struct net_mgmt_event_callback l4_cb;
 static struct net_mgmt_event_callback conn_cb;
@@ -138,6 +141,40 @@ static void connectivity_event_handler(struct net_mgmt_event_callback *cb, uint3
 	}
 }
 
+
+static void send_memfault_data(void)
+{
+	LOG_INF("Sending data to Memfault");
+
+	/* Check if there is any data available to be sent. */
+	if (!memfault_packetizer_data_available()) {
+		LOG_DBG("No data to send");
+		return;
+	}
+
+	/* Upload any stored data to Memfault */
+	memfault_zephyr_port_post_data();
+}
+
+
+static void prv_ipv4_mgmt_event_handler(struct net_mgmt_event_callback *cb, uint32_t event,
+					struct net_if *iface)
+{
+	switch (event) {
+	case NET_EVENT_IPV4_ADDR_ADD:
+		LOG_INF("IPv4 address acquired");
+		context.connected = true;
+		break;
+	case NET_EVENT_IPV4_ADDR_DEL:
+		LOG_INF("IPv4 address lost");
+		// network_disconnected();
+		break;
+	default:
+		LOG_DBG("Unknown event: 0x%08X", event);
+		break;
+	}
+}
+
 int main(void)
 {
 	int err;
@@ -172,6 +209,18 @@ int main(void)
 		__ASSERT(false, "conn_mgr_all_if_connect, error: %d", err);
 		return err;
 	}
+    
+    net_mgmt_init_event_callback(&net_shell_mgmt_cb, net_mgmt_event_handler,
+				     NET_EVENT_IPV4_DHCP_BOUND);
+
+	net_mgmt_add_event_callback(&net_shell_mgmt_cb);
+
+	// initialize and register the IPv4 event callback
+	net_mgmt_init_event_callback(&net_mgmt_ipv4_callback, prv_ipv4_mgmt_event_handler,
+				     NET_EVENT_IPV4_ADDR_ADD | NET_EVENT_IPV4_ADDR_DEL);
+	net_mgmt_add_event_callback(&net_mgmt_ipv4_callback);
+
+
 
 	/* Performing in an infinite loop to be resilient against
 	 * re-connect bursts directly after boot, e.g. when connected
@@ -183,8 +232,19 @@ int main(void)
 	 */
 
 	while (1) {
+		wifi_connect();
+		
 		k_sem_take(&nw_connected_sem, K_FOREVER);
 		LOG_INF("Connected to network");
 		on_connect();
+		
+		
+		if (context.connected) {
+			// k_sleep(K_FOREVER);
+			send_memfault_data();
+		} else if (!context.connect_result) {
+			LOG_ERR("Connection Timed Out");
+		}
+
 	}
 }
